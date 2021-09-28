@@ -8,3 +8,4 @@ Generated Files
 packages
 target
 *.user
+*.lock
