@@ -7,3 +7,4 @@ Release
 Generated Files
 packages
 target
+*.user
