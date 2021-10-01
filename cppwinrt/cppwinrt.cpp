@@ -1,3 +1,4 @@
+#define WINRT_NO_MODULE_LOCK
 #include "winrt/Windows.System.Power.h"
 
 int main()
