@@ -20,7 +20,7 @@ Rust (using the [Windows](https://github.com/microsoft/windows-rs) crate) and [C
 
 ![image](https://user-images.githubusercontent.com/9845234/136460331-6c6fbc86-e0d2-4b9c-9687-36a71b5d81dd.png)
 
-![image](https://user-images.githubusercontent.com/9845234/136460358-d6bae3ab-c4dc-4c64-8203-b55c1817918f.png)
+![image](https://user-images.githubusercontent.com/9845234/136463974-67ea1b44-3b3f-49a1-8020-a03fef7767d3.png)
 
 ## Factory calls
 
