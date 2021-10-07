@@ -22,3 +22,6 @@ Rust (using the [Windows](https://github.com/microsoft/windows-rs) crate) and [C
 
 ![image](https://user-images.githubusercontent.com/9845234/136460358-d6bae3ab-c4dc-4c64-8203-b55c1817918f.png)
 
+## Factory calls
+
+![image](https://user-images.githubusercontent.com/9845234/136463141-113c55c0-977b-4605-8d4e-b51af1b31a54.png)
