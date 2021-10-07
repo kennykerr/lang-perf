@@ -1,0 +1,10 @@
+namespace Component
+{
+    [default_interface]
+    runtimeclass Class
+    {
+        Class();
+        Int32 Int32Property;
+        Object ObjectProperty;
+    }
+}
