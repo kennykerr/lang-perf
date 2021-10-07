@@ -13,3 +13,12 @@ Rust (using the [Windows](https://github.com/microsoft/windows-rs) crate) and [C
 ![image](https://user-images.githubusercontent.com/9845234/136454775-a5086998-67b1-4ae0-a2fa-fe80b83a7198.png)
 
 ![image](https://user-images.githubusercontent.com/9845234/136454805-ee3a30e0-2bb2-45ee-81d1-66c9f4e0752b.png)
+
+## C# relative performance
+
+![image](https://user-images.githubusercontent.com/9845234/136460306-0a9d8226-266b-43a0-92ef-03c1ce8d1e53.png)
+
+![image](https://user-images.githubusercontent.com/9845234/136460331-6c6fbc86-e0d2-4b9c-9687-36a71b5d81dd.png)
+
+![image](https://user-images.githubusercontent.com/9845234/136460358-d6bae3ab-c4dc-4c64-8203-b55c1817918f.png)
+
