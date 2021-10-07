@@ -11,8 +11,32 @@
         }
 
         timer.Stop();
-        System.Console.WriteLine("{0} ms", timer.ElapsedMilliseconds);
+        System.Console.WriteLine("Factory calls: {0} ms", timer.ElapsedMilliseconds);
 
+        timer.Restart();
         var o = new Component.Class();
+
+        for (int i = 0; i < 10_000_000; i++)
+        {
+            o.Int32Property = 123;
+            var _ = o.Int32Property;
+        }
+
+        timer.Stop();
+        System.Console.WriteLine("Int32 parameters: {0} ms", timer.ElapsedMilliseconds);
+
+        timer.Restart();
+
+        for (int i = 0; i < 10_000_000; i++)
+        {
+            o.ObjectProperty = o;
+            var _ = o.ObjectProperty;
+        }
+
+        timer.Stop();
+        System.Console.WriteLine("Object parameters: {0} ms", timer.ElapsedMilliseconds);
+
+        var process = Windows.System.Diagnostics.ProcessDiagnosticInfo.GetForCurrentProcess();
+        System.Console.WriteLine("Private pages: {0}\n", process.MemoryUsage.GetReport().PrivatePageCount);
     }
 }

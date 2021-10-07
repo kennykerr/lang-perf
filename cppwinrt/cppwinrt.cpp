@@ -1,5 +1,6 @@
 #define WINRT_NO_MODULE_LOCK
 #include "winrt/Windows.System.Power.h"
+#include "winrt/Windows.System.Diagnostics.h"
 #include "winrt/Component.h"
 
 int main()
@@ -34,4 +35,6 @@ int main()
 
     printf("Object parameters: %lld ms\n", std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start).count());
 
+    auto process = winrt::Windows::System::Diagnostics::ProcessDiagnosticInfo::GetForCurrentProcess();
+    printf("Private pages: %lld\n", process.MemoryUsage().GetReport().PrivatePageCount());
 }
