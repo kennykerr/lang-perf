@@ -1,5 +1,6 @@
 fn main() {
     windows::build! {
-        Windows::System::Power::PowerManager
+        Windows::System::Power::PowerManager,
+        Component::Class,
     };
 }

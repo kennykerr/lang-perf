@@ -12,5 +12,7 @@
 
         timer.Stop();
         System.Console.WriteLine("{0} ms", timer.ElapsedMilliseconds);
+
+        var o = new Component.Class();
     }
 }
