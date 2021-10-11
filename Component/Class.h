@@ -26,8 +26,18 @@ namespace winrt::Component::implementation
             m_object = value;
         }
 
+        hstring StringProperty() const
+        {
+            return m_string;
+        }
+        void StringProperty(hstring const& value)
+        {
+            m_string = value;
+        }
+
         int32_t m_int32{};
         Windows::Foundation::IInspectable m_object;
+        hstring m_string;
     };
 }
 

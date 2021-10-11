@@ -35,6 +35,16 @@ int main()
 
     printf("Object parameters: %lld ms\n", std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start).count());
 
+    start = std::chrono::high_resolution_clock::now();
+
+    for (int i = 0; i < 10'000'000; i++)
+    {
+        object.StringProperty(L"value");
+        [[maybe_unused]] auto _ = object.StringProperty();
+    }
+
+    printf("String parameters: %lld ms\n", std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start).count());
+
     auto process = winrt::Windows::System::Diagnostics::ProcessDiagnosticInfo::GetForCurrentProcess();
     printf("Private pages: %lld\n", process.MemoryUsage().GetReport().PrivatePageCount());
 }

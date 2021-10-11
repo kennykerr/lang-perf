@@ -6,5 +6,6 @@ namespace Component
         Class();
         Int32 Int32Property;
         Object ObjectProperty;
+        String StringProperty;
     }
 }
