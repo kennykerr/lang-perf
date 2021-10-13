@@ -12,4 +12,6 @@ Rust (using the [Windows](https://github.com/microsoft/windows-rs) crate) and [C
 
 ![image](https://user-images.githubusercontent.com/9845234/137162612-5ea40cf2-5cad-4a8b-87d5-8bd2408da95c.png)
 
+* Rust is slightly slower than C++ here because Rust prefers UTF-8 strings so the added cost here is converting from UTF-8 to HSTRING.
+
 ![image](https://user-images.githubusercontent.com/9845234/137162641-3b104e21-8f47-4f91-9612-1bccf2b8baa6.png)
