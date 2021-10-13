@@ -28,6 +28,15 @@ fn main() -> windows::Result<()> {
 
     println!("Object parameters: {} ms", start.elapsed().as_millis());
 
+    let start = std::time::Instant::now();
+
+    for _ in 0..10_000_000 {
+        object.SetStringProperty("value")?;
+        let _ = object.StringProperty()?;
+    }
+
+    println!("String parameters: {} ms", start.elapsed().as_millis());
+
     let process = Windows::System::Diagnostics::ProcessDiagnosticInfo::GetForCurrentProcess()?;
     println!("Private pages: {}", process.MemoryUsage()?.GetReport()?.PrivatePageCount()?);
 
