@@ -1,5 +1,15 @@
 namespace Component
 {
+    interface IDefault
+    {
+        Int32 DefaultProperty { get; };
+    }
+
+    interface INonDefault
+    {
+        Int32 NonDefaultProperty { get; };
+    }
+
     [default_interface]
     runtimeclass Class
     {
@@ -7,5 +17,7 @@ namespace Component
         Int32 Int32Property;
         Object ObjectProperty;
         String StringProperty;
+
+        Object NewObject();
     }
 }

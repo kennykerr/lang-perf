@@ -4,6 +4,21 @@
 
 namespace winrt::Component::implementation
 {
+    struct TestObject : implements<TestObject, IDefault, INonDefault>
+    {
+        TestObject() = default;
+
+        int32_t DefaultProperty() const
+        {
+            return 123;
+        }
+
+        int32_t NonDefaultProperty() const
+        {
+            return 456;
+        }
+    };
+
     struct Class : ClassT<Class>
     {
         Class() = default;
@@ -15,6 +30,11 @@ namespace winrt::Component::implementation
         void Int32Property(int32_t value)
         {
             m_int32 = value;
+        }
+
+        Windows::Foundation::IInspectable NewObject() const
+        {
+            return make<TestObject>();
         }
 
         Windows::Foundation::IInspectable ObjectProperty() const
