@@ -1,4 +1,5 @@
 windows::include_bindings!();
+use windows::Interface;
 
 fn main() -> windows::Result<()> {
     let start = std::time::Instant::now();
@@ -36,6 +37,14 @@ fn main() -> windows::Result<()> {
     }
 
     println!("String parameters: {} ms", start.elapsed().as_millis());
+
+    let start = std::time::Instant::now();
+
+    for _ in 0..10_000_000 {
+        let _ = object.ObjectProperty()?.cast::<Component::Class>()?.Int32Property()?;
+    }
+
+    println!("Dynamic cast: {} ms", start.elapsed().as_millis());
 
     let process = Windows::System::Diagnostics::ProcessDiagnosticInfo::GetForCurrentProcess()?;
     println!("Private pages: {}", process.MemoryUsage()?.GetReport()?.PrivatePageCount()?);

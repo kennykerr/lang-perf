@@ -47,6 +47,16 @@
         timer.Stop();
         System.Console.WriteLine("String parameters: {0} ms", timer.ElapsedMilliseconds);
 
+        timer.Restart();
+
+        for (int i = 0; i < 10_000_000; i++)
+        {
+            var _ = (o.ObjectProperty as Component.Class).Int32Property;
+        }
+
+        timer.Stop();
+        System.Console.WriteLine("Dynamic cast: {0} ms", timer.ElapsedMilliseconds);
+
         var process = Windows.System.Diagnostics.ProcessDiagnosticInfo.GetForCurrentProcess();
         System.Console.WriteLine("Private pages: {0}\n", process.MemoryUsage.GetReport().PrivatePageCount);
     }
