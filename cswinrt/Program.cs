@@ -51,7 +51,7 @@
 
         for (int i = 0; i < 10_000_000; i++)
         {
-            var _ = (o.ObjectProperty as Component.Class).Int32Property;
+            var _ = (o.NewObject() as Component.INonDefault).NonDefaultProperty;
         }
 
         timer.Stop();

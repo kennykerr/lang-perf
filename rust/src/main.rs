@@ -41,13 +41,19 @@ fn main() -> windows::Result<()> {
     let start = std::time::Instant::now();
 
     for _ in 0..10_000_000 {
-        let _ = object.ObjectProperty()?.cast::<Component::Class>()?.Int32Property()?;
+        let _ = object
+            .NewObject()?
+            .cast::<Component::INonDefault>()?
+            .NonDefaultProperty()?;
     }
 
     println!("Dynamic cast: {} ms", start.elapsed().as_millis());
 
     let process = Windows::System::Diagnostics::ProcessDiagnosticInfo::GetForCurrentProcess()?;
-    println!("Private pages: {}", process.MemoryUsage()?.GetReport()?.PrivatePageCount()?);
+    println!(
+        "Private pages: {}",
+        process.MemoryUsage()?.GetReport()?.PrivatePageCount()?
+    );
 
     Ok(())
 }

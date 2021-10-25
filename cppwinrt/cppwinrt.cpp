@@ -54,7 +54,7 @@ int main()
 
     for (int i = 0; i < 10'000'000; i++)
     {
-        [[maybe_unused]] auto _ = object.ObjectProperty().as<winrt::Component::Class>().Int32Property();
+        [[maybe_unused]] auto _ = object.NewObject().as<winrt::Component::INonDefault>().NonDefaultProperty();
     }
 
     printf("Dynamic cast: %lld ms\n", elapsed(start));
